@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="AI-Service" />
+        <module name="eurekaServer" />
+        <module name="Configuration-Server" />
+        <module name="API-GateWay" />
+      </profile>
+      <profile name="Annotation profile for userService" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath>
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="userService" />
+        <module name="activity-Service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AI-Service" options="-parameters" />
+      <module name="API-GateWay" options="-parameters" />
+      <module name="Configuration-Server" options="-parameters" />
+      <module name="activity-Service" options="-parameters" />
+      <module name="eurekaServer" options="-parameters" />
+      <module name="userService" options="-parameters" />
+    </option>
+  </component>
+</project>
