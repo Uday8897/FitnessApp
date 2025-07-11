@@ -1,35 +1,31 @@
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8181/realms/fitnessApp/protocol/openid-connect/certs
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
       routes:
-        - id: user-service
-          uri: lb://user-service
+        - id: auth-service
+          uri: lb://auth-service
           predicates:
-            - Path=/api/users/**
-
+            - Path=/auth/**
         - id: activity-service
           uri: lb://activity-service
           predicates:
             - Path=/api/activity/**
+          filters:
+            - JwtValidation
 
         - id: ai-service
-          uri: lb://AI-SERVICE
+          uri: lb://ai-service
           predicates:
             - Path=/api/recommendations/**
-
+          filters:
+            - JwtValidation
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+auth:
+  service:
+    url: lb://auth-service
+
 server:
   port: 9090
-

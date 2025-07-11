@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/AI-Service/pom.xml" />
         <option value="$PROJECT_DIR$/Configuration-Server/pom.xml" />
         <option value="$PROJECT_DIR$/API-GateWay/pom.xml" />
+        <option value="$PROJECT_DIR$/Auth-Service/pom.xml" />
       </list>
     </option>
   </component>
